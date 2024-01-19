@@ -1,0 +1,38 @@
+.pk-navbar {
+  height: 100px;
+  justify-content: center;
+}
+
+.pk-logo {
+  width: 15%;
+}
+
+.pk-search {
+  width: 55%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pk-userOptions {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.pk-input {
+  width: 90%;
+  height: 90%;
+  background-color: var(--search-bg);
+  border: var(--search-border) solid 1px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--black-color);
+}
+
+.pk-input:focus {
+  outline: none;
+  background-color: var(--white-color);
+}
