@@ -1,10 +1,15 @@
 .pk-navbar {
-  height: 100px;
+  height: 70px;
   justify-content: center;
 }
 
 .pk-logo {
   width: 15%;
+}
+
+.pk-logo-img {
+  width: 150px;
+  height: 30px;
 }
 
 .pk-search {
@@ -13,6 +18,21 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.pk-searchBtn {
+  background-image: -webkit-linear-gradient(0deg, #ff934b 0%, #ff5e62 100%);
+  width: 15%;
+  height: 65%;
+  border-radius: 0%;
+}
+
+.pk-searchIcon {
+  color: var(--logo-color);
+  font-size: xx-large;
+  border: var(--search-border);
+  background-color: var(--search-bg);
+  padding: 6px;
 }
 
 .pk-userOptions {
@@ -24,11 +44,11 @@
 
 .pk-input {
   width: 90%;
-  height: 90%;
+  height: 57%;
   background-color: var(--search-bg);
   border: var(--search-border) solid 1px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 13px;
   color: var(--black-color);
 }
 

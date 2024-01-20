@@ -1,0 +1,11 @@
+.pk-categories-bar {
+  width: 100%;
+  padding: 10px;
+  margin-top: 70px;
+  background-color: var(--logo-color);
+  position: fixed;
+  font-size: 13px;
+  display: inline-flex;
+  color: var(--white-color);
+  top: 0;
+}

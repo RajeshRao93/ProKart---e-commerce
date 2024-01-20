@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import getCategories from "../../actions/categoryService";
+import "./CategoriesComponent.css";
 
 const CategoriesComponent = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories()
+      .then((response) => response.json())
+      .then((categories) => {
+        setCategories(categories);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
-    <div
-      style={{
-        width: "100%",
-        padding: "20px",
-        marginTop: "100px",
-        backgroundColor: "var(--logo-color)",
-        position: "fixed",
-      }}
-    >
-      CategoriesComponent
+    <div className="pk-categories-bar">
+      {categories.map((category: string, index: number) => {
+        return (
+          <span key={index} style={{ margin: "auto" }}>
+            {category.toUpperCase()}
+          </span>
+        );
+      })}
     </div>
   );
 };

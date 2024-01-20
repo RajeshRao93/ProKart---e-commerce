@@ -1,0 +1,23 @@
+.pk-home-container {
+  margin-top: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pk-home-stepper {
+  width: 100%;
+  cursor: pointer;
+}
+
+.pk-home-products {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.sk-product-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
