@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import getCategories from "../../actions/categoryService";
 import "./CategoriesComponent.css";
+import { redirect } from "react-router-dom";
 
 const CategoriesComponent = () => {
   const [categories, setCategories] = useState([]);
@@ -16,11 +17,19 @@ const CategoriesComponent = () => {
       });
   }, []);
 
+  const changeCategory = (value: string) => {
+    return redirect("/category");
+  };
+
   return (
     <div className="pk-categories-bar">
       {categories.map((category: string, index: number) => {
         return (
-          <span key={index} style={{ margin: "auto" }}>
+          <span
+            key={index}
+            style={{ margin: "auto" }}
+            onClick={() => changeCategory(category)}
+          >
             {category.toUpperCase()}
           </span>
         );

@@ -8,4 +8,9 @@
   display: inline-flex;
   color: var(--white-color);
   top: 0;
+  z-index: 1;
+}
+
+span {
+  cursor: pointer;
 }

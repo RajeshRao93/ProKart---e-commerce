@@ -6,4 +6,14 @@ const getAllProducts = async () => {
   return products;
 };
 
-export default getAllProducts;
+const getAllProductsByCategory = async (category: string) => {
+  let products = await fetch(
+    `${
+      import.meta.env.VITE_REACT_APP_FETCH_DATA_BASE_URL
+    }/products/category/${category}`
+  );
+
+  return products;
+};
+
+export { getAllProducts, getAllProductsByCategory };
