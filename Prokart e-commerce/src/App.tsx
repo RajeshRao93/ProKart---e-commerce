@@ -4,18 +4,17 @@ import CategoriesComponent from "./components/categoriesComponent/CategoriesComp
 import HomeComponent from "./components/homeComponent/HomeComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductByCategoryComponent from "./components/productComponent/productByCategoryComponent/ProductByCategoryComponent";
+import ProductDescriptionComponent from "./components/productComponent/productDescriptionComponent/productDescriptionComponent";
 
 const App = () => {
   return (
     <div className="App">
-      <NavBarComponent />
-      <CategoriesComponent />
       <BrowserRouter>
+        <NavBarComponent />
+        <CategoriesComponent />
         <Routes>
-          <Route
-            path="/category"
-            element={<ProductByCategoryComponent category={"jewelery"} />}
-          />
+          <Route path="/category" element={<ProductByCategoryComponent />} />
+          <Route path="/product" element={<ProductDescriptionComponent />} />
           <Route path="/" element={<HomeComponent />} />
         </Routes>
       </BrowserRouter>

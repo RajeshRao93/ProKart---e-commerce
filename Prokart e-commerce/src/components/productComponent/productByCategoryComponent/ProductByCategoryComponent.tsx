@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from "react";
-import "./ProductByCategiryComponent.css";
+import "./ProductByCategoryComponent.css";
 import { getAllProductsByCategory } from "../../../actions/productService";
 import ProductDisplayComponent from "../productDisplayComponent/ProductDisplayComponent";
 import { Typography } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
-const ProductByCategoryComponent = (props: any) => {
-  const { category } = props;
+const ProductByCategoryComponent = () => {
   const [products, setProducts] = useState([]);
-  let location = useLocation();
-  let ctgry = props ? category : location.state;
+  let [searchParams, setSeachParams] = useSearchParams();
+  const navigate = useNavigate();
+  let paramCategory = searchParams.get("category");
+  var category: string | null = paramCategory;
 
   useEffect(() => {
-    getAllProductsByCategory(ctgry)
-      .then((res: { json: () => any }) => res.json())
-      .then((products: any) => {
-        console.log(products);
-        setProducts(products);
-      })
-      .catch((err: any) => {
-        console.log(err);
-      });
-  }, [ctgry]);
+    if (category) {
+      getAllProductsByCategory(category)
+        .then((res: { json: () => any }) => res.json())
+        .then((products: any) => {
+          console.log(products);
+          setProducts(products);
+        })
+        .catch((err: any) => {
+          console.log(err);
+        });
+    } else {
+      navigate("/");
+    }
+  }, [category]);
+
+  const onProdClick = (product: any) => {
+    navigate("/product", { state: { product: product } });
+  };
 
   return (
     <div className="pk-products-category">
-      <Typography variant="h5">{ctgry}</Typography>
+      <Typography variant="h5">{category?.toUpperCase()}</Typography>
       <div className="pk-products">
         {products.map((product: any, index: number) => {
           return (
@@ -35,6 +44,7 @@ const ProductByCategoryComponent = (props: any) => {
               price={product.price}
               image={product.image}
               rating={product.rating.rate}
+              handleClick={() => onProdClick(product)}
             />
           );
         })}

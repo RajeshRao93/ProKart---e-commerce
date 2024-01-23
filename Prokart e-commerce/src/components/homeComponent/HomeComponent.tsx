@@ -3,32 +3,34 @@ import "./HomeComponent.css";
 import { getAllProducts } from "../../actions/productService";
 import Stepper from "../sharedComponents/stepperComponent/StepperComponent";
 import ProductDisplayComponent from "../productComponent/productDisplayComponent/ProductDisplayComponent";
+import { useNavigate } from "react-router-dom";
+
+export const images = [
+  {
+    label: 1,
+    imgPath: "./src/assets/img1.jpg",
+  },
+  {
+    label: 2,
+    imgPath: "./src/assets/img2.jpg",
+  },
+  {
+    label: 3,
+    imgPath: "./src/assets/img3.jpg",
+  },
+  {
+    label: 4,
+    imgPath: "./src/assets/img4.jpg",
+  },
+  {
+    label: 5,
+    imgPath: "./src/assets/img5.jpg",
+  },
+];
 
 const HomeComponent = () => {
   const [products, setProducts] = useState([]);
-
-  const images = [
-    {
-      label: 1,
-      imgPath: "./src/assets/img1.jpg",
-    },
-    {
-      label: 2,
-      imgPath: "./src/assets/img2.jpg",
-    },
-    {
-      label: 3,
-      imgPath: "./src/assets/img3.jpg",
-    },
-    {
-      label: 4,
-      imgPath: "./src/assets/img4.jpg",
-    },
-    {
-      label: 5,
-      imgPath: "./src/assets/img5.jpg",
-    },
-  ];
+  let navigate = useNavigate();
 
   useEffect(() => {
     getAllProducts()
@@ -41,6 +43,10 @@ const HomeComponent = () => {
         console.log(err);
       });
   }, []);
+
+  const onProdClick = (product: any) => {
+    navigate("/product", { state: { product: product } });
+  };
 
   return (
     <div className="pk-home-container">
@@ -56,6 +62,7 @@ const HomeComponent = () => {
               price={product.price}
               image={product.image}
               rating={product.rating.rate}
+              handleClick={() => onProdClick(product)}
             />
           );
         })}

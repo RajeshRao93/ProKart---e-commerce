@@ -13,12 +13,24 @@ export interface IProdDisplayProps {
   category?: string;
   image?: string;
   rating: number;
+  handleClick: () => void;
 }
 
 const ProductDisplayComponent = (props: IProdDisplayProps) => {
-  const { id, title, price, description, category, image, rating } = props;
+  const {
+    id,
+    title,
+    price,
+    description,
+    category,
+    image,
+    rating,
+    handleClick,
+  } = props;
+
   return (
     <Card
+      onClick={handleClick}
       sx={{
         maxWidth: 345,
         margin: "15px",

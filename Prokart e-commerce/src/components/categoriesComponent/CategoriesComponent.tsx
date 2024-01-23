@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import getCategories from "../../actions/categoryService";
 import "./CategoriesComponent.css";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CategoriesComponent = () => {
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCategories()
@@ -18,7 +19,7 @@ const CategoriesComponent = () => {
   }, []);
 
   const changeCategory = (value: string) => {
-    return redirect("/category");
+    return navigate(`/category?category=${value}`);
   };
 
   return (
