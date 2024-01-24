@@ -28,9 +28,28 @@ const ProductDisplayComponent = (props: IProdDisplayProps) => {
     handleClick,
   } = props;
 
+  const addToCart = () => {
+    var prods = [];
+    var productsInCart = localStorage.getItem("productsInCart");
+
+    if (productsInCart) {
+      prods = JSON.parse(productsInCart);
+    }
+
+    prods.push({
+      id: id,
+      title: title,
+      price: price,
+      description: description,
+      image: image,
+      rating: rating,
+      category: category,
+    });
+    localStorage.setItem("productsInCart", JSON.stringify(prods));
+  };
+
   return (
     <Card
-      onClick={handleClick}
       sx={{
         maxWidth: 345,
         margin: "15px",
@@ -45,6 +64,7 @@ const ProductDisplayComponent = (props: IProdDisplayProps) => {
           image={image}
           alt="prod img"
           sx={{ objectFit: "contain" }}
+          onClick={handleClick}
         />
         <CardContent sx={{ height: "100px" }}>
           <Typography gutterBottom variant="h5" component="div">
@@ -63,6 +83,7 @@ const ProductDisplayComponent = (props: IProdDisplayProps) => {
             <Button
               variant="contained"
               sx={{ backgroundColor: "var(--logo-color)" }}
+              onClick={addToCart}
             >
               Add to cart
             </Button>

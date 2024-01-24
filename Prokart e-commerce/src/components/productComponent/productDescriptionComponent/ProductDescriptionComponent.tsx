@@ -17,6 +17,19 @@ const ProductDescriptionComponent = () => {
   let location = useLocation();
   const { title, price, description, category, image, rating } =
     location.state.product;
+
+  const addToCart = () => {
+    var prods = [];
+    var productsInCart = localStorage.getItem("productsInCart");
+
+    if (productsInCart) {
+      prods = JSON.parse(productsInCart);
+    }
+
+    prods.push(location.state.product);
+    localStorage.setItem("productsInCart", JSON.stringify(prods));
+  };
+
   return (
     <>
       <div className="pk-prod-desc-container">
@@ -49,6 +62,7 @@ const ProductDescriptionComponent = () => {
             <Button
               variant="contained"
               sx={{ backgroundColor: "var(--logo-color)", margin: "25px" }}
+              onClick={addToCart}
             >
               Add to cart
             </Button>

@@ -5,8 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import styled from "@emotion/styled";
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
-import { Avatar, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import "./NavBarComponent.css";
 import { gapi } from "gapi-script";
 import GoogleLogInComponent from "../googleAuthComponents/GoogleLogInComponent";
@@ -15,6 +14,7 @@ import {
   GoogleLoginResponse,
   GoogleLoginResponseOffline,
 } from "@leecheuk/react-google-login";
+import CartFromIconComponent from "../cartComponent/cartFromIconComponent/CartFromIconComponent";
 
 const NavBarComponent = () => {
   const [user, setUser] = useState<
@@ -73,6 +73,7 @@ const NavBarComponent = () => {
             </Button>
           </div>
           <div className="pk-userOptions">
+            <CartFromIconComponent />
             {user ? (
               <GoogleLogOutComponent setUser={setUser} user={user} />
             ) : (

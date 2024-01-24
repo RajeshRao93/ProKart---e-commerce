@@ -1,0 +1,19 @@
+.pk-cartItem {
+  width: 100%;
+  display: flex;
+}
+
+.pk-cartItem-img {
+  width: 10%;
+  margin-right: 20px;
+}
+
+.pk-cartItem-name {
+  width: 90%;
+  font-size: smaller;
+}
+
+.pk-cartBtn {
+  background-image: -webkit-linear-gradient(0deg, #ff934b 0%, #ff5e62 100%);
+  width: 100%;
+}
