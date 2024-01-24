@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, Rating } from "@mui/material";
+import { useAddToCart } from "../../../customHooks/useAddToCart";
 
 export interface IProdDisplayProps {
   id?: number;
@@ -29,14 +30,7 @@ const ProductDisplayComponent = (props: IProdDisplayProps) => {
   } = props;
 
   const addToCart = () => {
-    var prods = [];
-    var productsInCart = localStorage.getItem("productsInCart");
-
-    if (productsInCart) {
-      prods = JSON.parse(productsInCart);
-    }
-
-    prods.push({
+    useAddToCart({
       id: id,
       title: title,
       price: price,
@@ -45,8 +39,6 @@ const ProductDisplayComponent = (props: IProdDisplayProps) => {
       rating: rating,
       category: category,
     });
-    window.localStorage.setItem("productsInCart", JSON.stringify(prods));
-    window.dispatchEvent(new Event("storage"));
   };
 
   return (

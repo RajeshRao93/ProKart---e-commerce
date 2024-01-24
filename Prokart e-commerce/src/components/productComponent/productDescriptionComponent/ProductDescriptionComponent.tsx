@@ -12,6 +12,7 @@ import {
 import DoneIcon from "@mui/icons-material/Done";
 import Stepper from "../../sharedComponents/stepperComponent/StepperComponent";
 import { images } from "../../homeComponent/HomeComponent";
+import { useAddToCart } from "../../../customHooks/useAddToCart";
 
 const ProductDescriptionComponent = () => {
   let location = useLocation();
@@ -19,16 +20,7 @@ const ProductDescriptionComponent = () => {
     location.state.product;
 
   const addToCart = () => {
-    var prods = [];
-    var productsInCart = localStorage.getItem("productsInCart");
-
-    if (productsInCart) {
-      prods = JSON.parse(productsInCart);
-    }
-
-    prods.push(location.state.product);
-    localStorage.setItem("productsInCart", JSON.stringify(prods));
-    window.dispatchEvent(new Event("storage"));
+    useAddToCart(location.state.product);
   };
 
   return (
