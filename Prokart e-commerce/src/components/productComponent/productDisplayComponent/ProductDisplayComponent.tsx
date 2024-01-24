@@ -45,7 +45,8 @@ const ProductDisplayComponent = (props: IProdDisplayProps) => {
       rating: rating,
       category: category,
     });
-    localStorage.setItem("productsInCart", JSON.stringify(prods));
+    window.localStorage.setItem("productsInCart", JSON.stringify(prods));
+    window.dispatchEvent(new Event("storage"));
   };
 
   return (

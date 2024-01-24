@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -20,6 +20,10 @@ const NavBarComponent = () => {
   const [user, setUser] = useState<
     GoogleLoginResponse | GoogleLoginResponseOffline
   >();
+  const cartRef = useRef(null);
+  window.addEventListener("storage", () => {
+    cartRef.current ? cartRef.current.click() : null;
+  });
 
   useEffect(() => {
     function start() {
@@ -33,7 +37,6 @@ const NavBarComponent = () => {
   }, []);
 
   console.log(user);
-
   const NavBar = styled(AppBar)(() => ({
     backgroundColor: "var(--white-color)",
     color: "var(--black-color)",
@@ -73,7 +76,7 @@ const NavBarComponent = () => {
             </Button>
           </div>
           <div className="pk-userOptions">
-            <CartFromIconComponent />
+            <CartFromIconComponent ref={cartRef} />
             {user ? (
               <GoogleLogOutComponent setUser={setUser} user={user} />
             ) : (

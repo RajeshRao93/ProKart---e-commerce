@@ -7,11 +7,11 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./CartFromIconComponent.css";
 
-const CartFromIconComponent = () => {
+const CartFromIconComponent = forwardRef(({}, ref) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [products, setProducts] = useState([]);
   const open = Boolean(anchorEl);
@@ -36,12 +36,15 @@ const CartFromIconComponent = () => {
 
   return (
     <div>
-      <Badge badgeContent={products.length} color="primary">
-        <ShoppingCartOutlinedIcon
-          sx={{ color: "var(--logo-color)" }}
-          onClick={(e) => handleClick(e)}
-        />
-      </Badge>
+      <button
+        style={{ backgroundColor: "transparent", border: "0px" }}
+        ref={ref}
+        onClick={(e) => handleClick(e)}
+      >
+        <Badge badgeContent={products.length} color="primary">
+          <ShoppingCartOutlinedIcon sx={{ color: "var(--logo-color)" }} />
+        </Badge>
+      </button>
       <Paper sx={{ maxWidth: "100%" }}>
         <Menu
           id="basic-menu"
@@ -110,6 +113,6 @@ const CartFromIconComponent = () => {
       </Paper>
     </div>
   );
-};
+});
 
 export default CartFromIconComponent;

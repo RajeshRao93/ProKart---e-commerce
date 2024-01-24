@@ -28,6 +28,7 @@ const ProductDescriptionComponent = () => {
 
     prods.push(location.state.product);
     localStorage.setItem("productsInCart", JSON.stringify(prods));
+    window.dispatchEvent(new Event("storage"));
   };
 
   return (
