@@ -78,7 +78,7 @@ const BuyComponent = () => {
       <div className="pk-totalCostContainer">
         <div className="pk-totalCost">
           <strong>Order Summary (Total {products.length} items)</strong>
-          {totalCost > 0 && (
+          {products.length > 0 && (
             <p>
               <strong>Delivery by Tomorrow </strong>
             </p>
