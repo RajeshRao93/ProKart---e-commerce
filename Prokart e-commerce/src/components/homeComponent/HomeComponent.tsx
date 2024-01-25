@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./HomeComponent.css";
 import { getAllProducts } from "../../actions/productService";
 import Stepper from "../sharedComponents/stepperComponent/StepperComponent";
@@ -36,7 +36,6 @@ const HomeComponent = () => {
     getAllProducts()
       .then((res: { json: () => any }) => res.json())
       .then((products: any) => {
-        console.log(products);
         setProducts(products);
       })
       .catch((err: any) => {
@@ -61,6 +60,7 @@ const HomeComponent = () => {
               title={product.title}
               price={product.price}
               image={product.image}
+              id={product.id}
               rating={product.rating.rate}
               handleClick={() => onProdClick(product)}
             />
@@ -72,12 +72,3 @@ const HomeComponent = () => {
 };
 
 export default HomeComponent;
-
-// {
-//   "id":1,
-//   "title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-//   "price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-//   "category":"men's clothing",
-//   "image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-//   "rating":{"rate":3.9,"count":120}
-// }

@@ -1,5 +1,3 @@
-import React from "react";
-import { IProdDisplayProps } from "../productDisplayComponent/ProductDisplayComponent";
 import "./ProductDescriptionComponent.css";
 import { useLocation } from "react-router-dom";
 import {
@@ -43,7 +41,7 @@ const ProductDescriptionComponent = () => {
             <Typography gutterBottom component="div" variant="body2">
               {description}
             </Typography>
-            <Typography variant="h5">{price}$</Typography>
+            <Typography variant="h5">{price} $</Typography>
 
             <Rating
               name="read-only"

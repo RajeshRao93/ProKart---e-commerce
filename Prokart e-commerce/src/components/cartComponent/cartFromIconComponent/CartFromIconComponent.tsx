@@ -9,11 +9,14 @@ import {
 } from "@mui/material";
 import React, { forwardRef, useEffect, useState } from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import "./CartFromIconComponent.css";
+import { useNavigate } from "react-router-dom";
 
 const CartFromIconComponent = forwardRef(({}, ref) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [products, setProducts] = useState([]);
+  var navigate = useNavigate();
   const open = Boolean(anchorEl);
   var productsInCart = localStorage.getItem("productsInCart");
 
@@ -29,9 +32,9 @@ const CartFromIconComponent = forwardRef(({}, ref) => {
     setAnchorEl(null);
   };
 
-  const clearCart = () => {
-    localStorage.removeItem("productsInCart");
+  const navigateToBuy = () => {
     handleClose();
+    navigate("/buy");
   };
 
   return (
@@ -82,7 +85,11 @@ const CartFromIconComponent = forwardRef(({}, ref) => {
               );
             })
           ) : (
-            <Typography variant="body2" sx={{ margin: "10px" }}>
+            <Typography
+              variant="h6"
+              sx={{ margin: "10px", textAlign: "center", color: "red" }}
+            >
+              <ErrorOutlineIcon />
               Cart is empty
             </Typography>
           )}
@@ -94,18 +101,9 @@ const CartFromIconComponent = forwardRef(({}, ref) => {
                 sx={{ borderRadius: "0%", marginBottom: "5px" }}
                 className="pk-cartBtn"
                 disableElevation
+                onClick={navigateToBuy}
               >
-                Go to cart
-              </Button>
-
-              <Button
-                variant="contained"
-                sx={{ borderRadius: "0%" }}
-                className="pk-cartBtn"
-                disableElevation
-                onClick={clearCart}
-              >
-                Clear cart
+                Buy now
               </Button>
             </div>
           )}

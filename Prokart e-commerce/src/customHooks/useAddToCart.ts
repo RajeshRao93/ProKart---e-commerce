@@ -8,7 +8,7 @@ const useAddToCart = (product: any) => {
 
   prods.push(product);
   localStorage.setItem("productsInCart", JSON.stringify(prods));
-  window.dispatchEvent(new Event("storage"));
+  window.dispatchEvent(new Event("addedToCart"));
 };
 
 export { useAddToCart };

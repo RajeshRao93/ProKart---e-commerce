@@ -4,7 +4,9 @@ import CategoriesComponent from "./components/categoriesComponent/CategoriesComp
 import HomeComponent from "./components/homeComponent/HomeComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductByCategoryComponent from "./components/productComponent/productByCategoryComponent/ProductByCategoryComponent";
-import ProductDescriptionComponent from "./components/productComponent/productDescriptionComponent/productDescriptionComponent";
+import ProductDescriptionComponent from "./components/productComponent/productDescriptionComponent/ProductDescriptionComponent";
+import BuyComponent from "./components/buyComponent/BuyComponent";
+import OrderStatusComponent from "./components/buyComponent/OrderStatusComponent";
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Routes>
           <Route path="/category" element={<ProductByCategoryComponent />} />
           <Route path="/product" element={<ProductDescriptionComponent />} />
+          <Route path="/buy" element={<BuyComponent />} />
+          <Route path="/orderstatus" element={<OrderStatusComponent />} />
           <Route path="/" element={<HomeComponent />} />
         </Routes>
       </BrowserRouter>

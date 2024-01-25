@@ -1,0 +1,63 @@
+.pk-buyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 150px;
+}
+
+.pk-buyItem {
+  width: 70%;
+}
+
+.pk-itemRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.pk-buyItemImg {
+  width: 30%;
+  margin-right: 20px;
+  border-right: 1px solid #ede8e8;
+  cursor: pointer;
+}
+
+.pk-buyItemName {
+  width: 60%;
+  font-size: smaller;
+}
+
+.pk-itemRemove {
+  width: 10%;
+  cursor: pointer;
+}
+
+.pk-totalCostContainer {
+  width: 15%;
+}
+
+.pk-itemCostRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pk-itemName {
+  width: 70%;
+  font-size: smaller;
+}
+
+.pk-itemCost {
+  width: 30%;
+  text-align: right;
+}
+
+.pk-totalCost {
+  border-bottom: 1px solid #ede8e8;
+}
+
+.pk-orderBtn {
+  background-image: -webkit-linear-gradient(0deg, #ff934b 0%, #ff5e62 100%);
+}

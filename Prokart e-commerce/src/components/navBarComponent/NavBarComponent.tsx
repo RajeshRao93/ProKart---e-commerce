@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -21,7 +21,7 @@ const NavBarComponent = () => {
     GoogleLoginResponse | GoogleLoginResponseOffline
   >();
   const cartRef = useRef(null);
-  window.addEventListener("storage", () => {
+  window.addEventListener("addedToCart", () => {
     cartRef.current ? cartRef.current.click() : null;
   });
 

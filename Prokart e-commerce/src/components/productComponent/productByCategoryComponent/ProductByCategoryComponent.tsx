@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./ProductByCategoryComponent.css";
 import { getAllProductsByCategory } from "../../../actions/productService";
 import ProductDisplayComponent from "../productDisplayComponent/ProductDisplayComponent";
@@ -40,6 +40,7 @@ const ProductByCategoryComponent = () => {
           return (
             <ProductDisplayComponent
               key={index}
+              id={product.id}
               title={product.title}
               price={product.price}
               image={product.image}

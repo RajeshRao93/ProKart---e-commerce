@@ -1,4 +1,3 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -7,12 +6,12 @@ import { Button, CardActionArea, Rating } from "@mui/material";
 import { useAddToCart } from "../../../customHooks/useAddToCart";
 
 export interface IProdDisplayProps {
-  id?: number;
+  id: number;
   title: string;
   price: string;
   description?: string;
   category?: string;
-  image?: string;
+  image: string;
   rating: number;
   handleClick: () => void;
 }
@@ -64,7 +63,7 @@ const ProductDisplayComponent = (props: IProdDisplayProps) => {
             {title.length > 20 ? `${title.substring(0, 20)}...` : title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {price}$
+            {price} $
           </Typography>
           <div style={{ display: "inline-block" }}>
             <Rating
