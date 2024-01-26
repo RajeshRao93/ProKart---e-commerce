@@ -4,6 +4,7 @@ import { getAllProducts } from "../../actions/productService";
 import Stepper from "../sharedComponents/stepperComponent/StepperComponent";
 import ProductDisplayComponent from "../productComponent/productDisplayComponent/ProductDisplayComponent";
 import { useNavigate } from "react-router-dom";
+import OffersAnimationComponent from "../sharedComponents/offersAnimationComponent/OffersAnimationComponent";
 
 export const images = [
   {
@@ -67,6 +68,8 @@ const HomeComponent = () => {
           );
         })}
       </div>
+
+      <OffersAnimationComponent />
     </div>
   );
 };

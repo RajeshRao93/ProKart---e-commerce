@@ -4,6 +4,7 @@ import { getAllProductsByCategory } from "../../../actions/productService";
 import ProductDisplayComponent from "../productDisplayComponent/ProductDisplayComponent";
 import { Typography } from "@mui/material";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import OffersAnimationComponent from "../../sharedComponents/offersAnimationComponent/OffersAnimationComponent";
 
 const ProductByCategoryComponent = () => {
   const [products, setProducts] = useState([]);
@@ -34,6 +35,7 @@ const ProductByCategoryComponent = () => {
 
   return (
     <div className="pk-products-category">
+      <OffersAnimationComponent />
       <Typography variant="h5">{category?.toUpperCase()}</Typography>
       <div className="pk-products">
         {products.map((product: any, index: number) => {

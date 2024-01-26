@@ -1,0 +1,44 @@
+.pk-offer {
+  text-align: center;
+  font-size: xx-large;
+  width: 100%;
+  background-image: -webkit-linear-gradient(
+    0deg,
+    white 0%,
+    rgb(253, 211, 251) 60%,
+    rgb(76, 167, 162) 100%
+  );
+  animation: bg-animation 2s infinite;
+  background-size: 300%;
+}
+
+.pk-offer-text {
+  background-size: 300%;
+  background-image: -webkit-linear-gradient(
+    0deg,
+    #ff934b 0%,
+    #b9e74d 20%,
+    #1ec8d4 30%,
+    #3f97ca 40%,
+    #0c1592 50%,
+    #e95a18 60%,
+    #bd1da7 70%,
+    #ff5e62 100%
+  );
+  animation: bg-animation 8s infinite;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
