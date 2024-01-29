@@ -17,3 +17,6 @@ Open [http://localhost:5173](http://localhost:5173) with your browser to see the
 
 ## Screenshots
 
+<img src="Prokart e-commerce/screenshots/Capture.PNG" alt="screen" width="100%"/>
+<img src="Prokart e-commerce/screenshots/Capture2.PNG" alt="screen" width="100%"/>
+<img src="Prokart e-commerce/screenshots/Capture3.PNG" alt="screen" width="100%"/>
