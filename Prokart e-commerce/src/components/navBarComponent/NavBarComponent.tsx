@@ -53,7 +53,7 @@ const NavBarComponent = () => {
               <a href="/">
                 <img
                   className="pk-logo-img"
-                  src="./src/assets/logo.png"
+                  src={import.meta.env.VITE_REACT_APP_LOGO}
                   alt="logo"
                 />
               </a>
