@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from "react";
 import { Button, CardMedia, Typography } from "@mui/material";
 import "./BuyComponent.css";

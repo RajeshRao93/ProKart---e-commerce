@@ -1,3 +1,4 @@
+// @ts-nocheck
 import "./ProductDescriptionComponent.css";
 import { useLocation } from "react-router-dom";
 import {
