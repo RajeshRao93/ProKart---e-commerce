@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+// import SwipeableViews from "react-swipeable-views";
+// import { autoPlay } from "react-swipeable-views-utils";
 
 interface StepperProps {
   images: [
@@ -13,7 +13,7 @@ interface StepperProps {
   ];
 }
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+//const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Stepper = (props: StepperProps) => {
   const { images } = props;
@@ -41,7 +41,7 @@ const Stepper = (props: StepperProps) => {
         margin: "0 50px",
       }}
     >
-      <AutoPlaySwipeableViews
+      {/* <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
@@ -65,7 +65,7 @@ const Stepper = (props: StepperProps) => {
             ) : null}
           </div>
         ))}
-      </AutoPlaySwipeableViews>
+      </AutoPlaySwipeableViews> */}
     </Box>
   );
 };

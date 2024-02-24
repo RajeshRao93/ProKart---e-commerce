@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./HomeComponent.css";
 import { getAllProducts } from "../../actions/productService";
-import Stepper from "../sharedComponents/stepperComponent/StepperComponent";
+// import Stepper from "../sharedComponents/stepperComponent/StepperComponent";
 import ProductDisplayComponent from "../productComponent/productDisplayComponent/ProductDisplayComponent";
 import { useNavigate } from "react-router-dom";
 import OffersAnimationComponent from "../sharedComponents/offersAnimationComponent/OffersAnimationComponent";
@@ -50,9 +50,10 @@ const HomeComponent = () => {
 
   return (
     <div className="pk-home-container">
-      <div className="pk-home-stepper">
+      {/* <div className="pk-home-stepper">
         <Stepper images={images} />
-      </div>
+      </div> */}
+      <OffersAnimationComponent />
       <div className="pk-home-products">
         {products.map((product: any, index: number) => {
           return (
