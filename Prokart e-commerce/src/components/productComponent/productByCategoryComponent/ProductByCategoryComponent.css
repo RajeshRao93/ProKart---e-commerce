@@ -6,3 +6,10 @@
   display: grid;
   grid-template-columns: auto auto auto;
 }
+
+@media (max-width: 600px) {
+  .pk-products {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
