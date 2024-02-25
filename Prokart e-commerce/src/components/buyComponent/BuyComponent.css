@@ -61,3 +61,17 @@
 .pk-orderBtn {
   background-image: -webkit-linear-gradient(0deg, #ff934b 0%, #ff5e62 100%);
 }
+
+@media (max-width: 600px) {
+  .pk-buyContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+  }
+
+  .pk-totalCostContainer {
+    width: 60%;
+    margin: auto;
+  }
+}

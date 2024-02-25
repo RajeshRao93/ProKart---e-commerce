@@ -57,3 +57,17 @@
   outline: none;
   background-color: var(--white-color);
 }
+
+@media (max-width: 600px) {
+  .pk-search {
+    display: none;
+  }
+
+  .pk-userOptions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

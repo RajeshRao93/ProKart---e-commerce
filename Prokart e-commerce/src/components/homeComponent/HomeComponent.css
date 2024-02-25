@@ -21,3 +21,10 @@
   align-items: center;
   margin: 25px;
 }
+
+@media (max-width: 600px) {
+  .pk-home-products {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
